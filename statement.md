@@ -39,7 +39,7 @@ The system provides essential functionality required for front-of-house operatio
 
 
 🔒 Limitations and Assumptions
-•	Data Volatility: The system currently lacks data persistence. All menu and order data is stored in memory and is lost upon program termination.
-•	Fixed Menu: The menu is hardcoded in the _initialize_menu method and cannot be modified (add/remove/edit) through the user interface.
-•	Single User Model: The CLI structure assumes sequential operation by a single user or staff member; it is not designed for concurrent multi-user access.
-•	Simple Status Flow: The status transition is limited to a linear flow (PENDING $\rightarrow$ PREPARING $\rightarrow$ COMPLETE).
+1.	Data Volatility: The system currently lacks data persistence. All menu and order data is stored in memory and is lost upon program termination.
+2.	Fixed Menu: The menu is hardcoded in the _initialize_menu method and cannot be modified (add/remove/edit) through the user interface.
+3.	Single User Model: The CLI structure assumes sequential operation by a single user or staff member; it is not designed for concurrent multi-user access.
+4.	Simple Status Flow: The status transition is limited to a linear flow (PENDING $\rightarrow$ PREPARING $\rightarrow$ COMPLETE).
