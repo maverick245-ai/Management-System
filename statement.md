@@ -6,17 +6,17 @@ This document serves as a formal statement detailing the architecture, functiona
 The system is constructed using the Object-Oriented Programming (OOP) paradigm, ensuring modularity, reusability, and separation of concerns. The core design revolves around three primary classes, detailed below.
 
 Core Components (Classes)
-•	MenuItem:
-o	Role: Acts as a Value Object defining the structure and properties of a single item available for sale.
-o	Data Fields: item_id (Integer), name (String), price (Float), and category (String).
-•	Order:
-o	Role: Represents a single Transaction Entity associated with a customer visit.
-o	Data Fields: order_id (UUID snippet), table_number (Integer), items (Dictionary mapping item_id to quantity), timestamp (datetime object), and status (String, default "PENDING").
-o	Methods: Includes logic to dynamically add items and calculate the total cost based on the current menu prices.
-•	RestaurantSystem:
-o	Role: The Central Manager/Controller that maintains the application state and orchestrates all operations.
-o	Data Fields: menu (Dictionary mapping item_id to MenuItem objects) and active_orders (List of Order objects).
-o	Initialization: The menu is initialized with hardcoded data upon system startup using the private method _initialize_menu().
+1.	MenuItem:
+2.	Role: Acts as a Value Object defining the structure and properties of a single item available for sale.
+3.	Data Fields: item_id (Integer), name (String), price (Float), and category (String).
+4.  Order:
+5.	Role: Represents a single Transaction Entity associated with a customer visit.
+6.	Data Fields: order_id (UUID snippet), table_number (Integer), items (Dictionary mapping item_id to quantity), timestamp (datetime object), and status (String, default "PENDING").
+7.	Methods: Includes logic to dynamically add items and calculate the total cost based on the current menu prices.
+8.	RestaurantSystem:
+9.	Role: The Central Manager/Controller that maintains the application state and orchestrates all operations.
+10.	Data Fields: menu (Dictionary mapping item_id to MenuItem objects) and active_orders (List of Order objects).
+11.	Initialization: The menu is initialized with hardcoded data upon system startup using the private method _initialize_menu().
 
 
 ⚙ Functional Capabilities
@@ -31,10 +31,10 @@ The system provides essential functionality required for front-of-house operatio
 •	Status Update (update_order_status): Allows staff to change the status of any active order (e.g., PENDING $\rightarrow$ PREPARING $\rightarrow$ COMPLETE) based on kitchen progress.
 3. Billing and Closure
 •	Bill Calculation (calculate_and_close_bill):
-o	Calculates the subtotal by aggregating costs from all items and quantities in the order.
-o	Applies a fixed 8% tax rate ($T=0.08$) to the subtotal.
-o	Calculates the Final Amount Due ($FAD = \text{Subtotal} + (\text{Subtotal} \times T)$).
-o	Generates a formatted, detailed receipt showing individual item costs, subtotal, tax, and final amount.
+1.	Calculates the subtotal by aggregating costs from all items and quantities in the order.
+2.	Applies a fixed 8% tax rate ($T=0.08$) to the subtotal.
+3.	Calculates the Final Amount Due ($FAD = \text{Subtotal} + (\text{Subtotal} \times T)$).
+4.	Generates a formatted, detailed receipt showing individual item costs, subtotal, tax, and final amount.
 •	Order Archival: Upon billing, the Order object is removed from the active_orders list, simulating archival and freeing the table.
 
 
